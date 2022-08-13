@@ -1,6 +1,6 @@
 from collections import deque
 
-S = int(input())
+S = input()
 Q = int(input())
 
 inv = False
@@ -10,10 +10,8 @@ S_deque = deque()
 for i in range(len(S)):
     S_deque.append(S[i])
 
-TFC = []
-
 for _ in range(Q):
-    TFC.append(list(input().split()))
+    TFC = list(map(str,input().split()))
 
     if TFC[0] == "1":
         if inv == False:
@@ -31,4 +29,14 @@ for _ in range(Q):
             else:
                 S_deque.append(C)
         else:
-            
+            if F == "1":
+                S_deque.append(C)
+            else:
+                S_deque.appendleft(C)
+
+ans = "".join(S_deque)
+
+if inv == True:
+    ans = ans[::-1]
+
+print(ans)
