@@ -1,0 +1,5 @@
+# A = int(input())
+# A, B = map(int,input().split())
+# A = list(map(int,input().split()))
+A, B = map(int,input().split())
+print("atcoder "[A-1:B])
